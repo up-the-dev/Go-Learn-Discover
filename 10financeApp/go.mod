@@ -1,0 +1,3 @@
+module financeApp
+
+go 1.21.6
