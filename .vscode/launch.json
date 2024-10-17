@@ -1,14 +1,12 @@
 {
   "version": "0.2.0",
   "configurations": [
-
-
-    {
-      "name": "Launch append.go",
+{
+      "name": "Launch bubble.go",
       "type": "go",
       "request": "launch",
       "mode": "auto",
-      "program": "D:/Learning/Go-Learn-Discover/03slices/append.go",
+      "program": "D:/Learning/Go-Learn-Discover/dsa/revise/bubble.go",
       "env": {},
       "args": [],
       "buildFlags": "",

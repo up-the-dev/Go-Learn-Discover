@@ -73,5 +73,13 @@ func main() {
 	// printFrom1toN(5)
 	// printFrom1toNBackTracking(5)
 	// printFromNto1(5)
-	printFromNto1Backtracking(1, 5)
+	// printFromNto1Backtracking(1, 5)
+	fmt.Println(factorial(5))
+}
+
+func factorial(n int) int {
+	if n == 1 {
+		return 1
+	}
+	return n * factorial(n-1)
 }
