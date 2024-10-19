@@ -67,6 +67,13 @@ func printFromNto1Backtracking(from int, to int) {
 	fmt.Println(from)
 }
 
+func factorial(n int) int {
+	if n == 1 {
+		return 1
+	}
+	return n * factorial(n-1)
+}
+
 func main() {
 	// fmt.Println(FindGreatestUsingLoop([]int{1, 4, 6, 5}))
 	// PrintName5Times()
@@ -74,12 +81,36 @@ func main() {
 	// printFrom1toNBackTracking(5)
 	// printFromNto1(5)
 	// printFromNto1Backtracking(1, 5)
-	fmt.Println(factorial(5))
+	// fmt.Println(factorial(5))
+
+	fmt.Println(isPalindrome("A man, a plan, a canal: Panama"))
 }
 
-func factorial(n int) int {
-	if n == 1 {
-		return 1
+func checkIfPallindrome(str string, ptr int) bool {
+	if ptr >= len(str)/2 {
+		return true
 	}
-	return n * factorial(n-1)
+	if str[ptr] != str[len(str)-1-ptr] {
+		return false
+	}
+	return checkIfPallindrome(str, ptr+1)
+}
+
+func isPalindrome(s string) bool {
+	// remove the non-alphanumeric characters
+	filteredStr := ""
+	for _, chr := range s {
+		if (chr >= 48 && chr <= 57) || (chr >= 65 && chr <= 90) || (chr >= 97 && chr <= 122) {
+			if chr >= 65 && chr <= 90 {
+				filteredStr = filteredStr + string(chr+32)
+			} else {
+				filteredStr = filteredStr + string(chr)
+
+			}
+		}
+	}
+
+	//check if isPalindrome
+	return checkIfPallindrome(filteredStr, 0)
+
 }
